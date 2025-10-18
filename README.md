@@ -1,35 +1,32 @@
-# 3i-atlas-orbit-visualizer
-# 3I/ATLAS — Interactive Orbit Visualizer (Dash)
+# ☄️ 3I/ATLAS — Interactive Orbit Visualizer (Python + Dash)
 
-A Python + Dash + Plotly web app that visualizes the orbit of **Comet 3I/ATLAS (C/2025 N1)** in **2D and 3D** using **NASA JPL Horizons** ephemeris.  
-You can animate the trajectory, see Earth and Sun markers, inspect closest approach, and export a full **Excel dataset** (ephemeris + metadata).
-
-https://github.com/<your-username>/3i-atlas-orbit-visualizer
+A fully interactive and animated **3D + 2D orbit visualizer** for comets and asteroids, built in **Python** using **Plotly Dash**.  
+It fetches live ephemeris data directly from **NASA JPL Horizons**, allowing users to visualize trajectories, orbital paths, and closest approaches to Earth in real time.
 
 ---
 
-## Features
+## 🚀 Features
 
-- Fetches **real ephemeris** from **NASA JPL Horizons**
-- **2D + 3D** heliocentric views (Sun/Earth/comet)
-- **Animated** trajectories with play/pause + date-only slider labels
-- **Closest approach** annotation (AU + km + date)
-- **Excel export** (Ephemeris + Metadata)
-- Dark theme, responsive layout
+- **3D + 2D Animated Orbits** with play/pause slider and date scrubber  
+- **Comet** dynamically updated per frame  
+- **Earth & Sun markers** for reference  
+- **Excel export** of ephemeris data  
+- **Responsive Dash web app** — runs locally or on any hosting service  
+- **Hosting-ready entrypoint** (binds to `0.0.0.0` and respects `PORT` env var)
 
 ---
 
-## Quickstart
+## 🧠 About
+
+This project visualizes the path of **Interstellar Comet 3I/ATLAS (C/2025 N1)** — one of the rare known interstellar visitors to our solar system.  
+You can modify the script to visualize any other comet or asteroid by changing the **NASA Horizons ID**.
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
 
 ```bash
-# 1) Create and activate a virtual env (recommended)
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-
-# 2) Install deps
-pip install -r requirements.txt
-
-# 3) Run
-python app.py
+git clone https://github.com/yourusername/3i-atlas-orbit-visualizer.git
+cd 3i-atlas-orbit-visualizer
