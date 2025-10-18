@@ -41,10 +41,10 @@ DEFAULT_STEP = "1d"
 EXPORT_DIR = os.environ.get("EXPORT_DIR", "exports")
 os.makedirs(EXPORT_DIR, exist_ok=True)
 
-REMOTE_TIMEOUT_S = int(os.environ.get("REMOTE_TIMEOUT_S", "60"))  # network timeout (s)
+REMOTE_TIMEOUT_S = int(os.environ.get("REMOTE_TIMEOUT_S", "60"))
 
 # -------------------------
-# Helper: format dates for animation sliders (date only, no time)
+# format dates for animation sliders(date only, no time)
 # -------------------------
 def format_dates_for_slider(dates_str_array, out_fmt="%Y-%m-%d"):
     """
@@ -64,19 +64,16 @@ def format_dates_for_slider(dates_str_array, out_fmt="%Y-%m-%d"):
             except ValueError:
                 continue
         else:
-            # Fallback: just take the first token before space (date-like part)
+
             cleaned.append(s.split()[0])
     return np.array(cleaned)
 
 # -------------------------
-# Helper: fetch ephemeris & derived metrics (cached)
+# fetch ephemeris & derived metrics
 # -------------------------
 @lru_cache(maxsize=16)
 def fetch_ephemeris(comet_id: str, start: str, stop: str, step: str):
-    """
-    Horizons queries with a small LRU cache keyed by (comet_id, start, stop, step).
-    Returns numpy arrays + Python datetimes. Only computes what's needed for kept plots.
-    """
+
     epochs = {'start': start, 'stop': stop, 'step': step}
 
     try:
@@ -126,7 +123,7 @@ def fetch_ephemeris(comet_id: str, start: str, stop: str, step: str):
     return data
 
 # -------------------------
-# Plot builders (Plotly, dark) — kept
+# Plot builders (Plotly, dark
 # -------------------------
 def fig_2d_helio(data):
     fig = go.Figure()
@@ -208,7 +205,7 @@ def fig_distance(data):
     return fig
 
 # -------------------------
-# Animated 3D/2D builders (Plotly frames) — dates-only slider labels
+# Animated 3D/2D builders (Plotly frames)
 # -------------------------
 def fig_3d_animated(data, frame_step: int = 2, trail_len: int = 25):
     x, y, z = np.array(data['x']), np.array(data['y']), np.array(data['z'])
@@ -504,7 +501,7 @@ def on_update(n, comet_id, start, stop, step):
         empty = go.Figure(layout=go.Layout(template="plotly_dark", paper_bgcolor="black", plot_bgcolor="black"))
         return empty, empty, empty, empty, empty, err, html.Div(err, style={"color":"#ef9a9a"})
 
-# Simple download route (serves files from EXPORT_DIR)
+#  download route
 @server.route("/download/<path:filename>")
 def download_file(filename):
     return send_from_directory(EXPORT_DIR, filename, as_attachment=True)
