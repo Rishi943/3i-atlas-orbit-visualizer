@@ -32,7 +32,18 @@ git clone https://github.com/yourusername/3i-atlas-orbit-visualizer.git
 cd 3i-atlas-orbit-visualizer
 ```
 
-3️⃣ Install dependencies
+### 2️⃣ Install Python (if not already installed)
+
+Make sure you have Python 3.10+ installed.
+
+You can check by running:
+```
+python --version
+```
+If you don’t have it, download it from the official site:
+🔗 https://www.python.org/downloads/
+
+### 3️⃣ Install dependencies
 
 Run this inside your project folder (and inside the virtual environment if you made one):
 
@@ -40,14 +51,14 @@ Run this inside your project folder (and inside the virtual environment if you m
 pip install dash plotly astroquery astropy numpy pandas openpyxl
 ```
 
-4️⃣ Run the app
+### 4️⃣ Run the app
 
 Start the local Dash server:
 ```
 python app.py
 ```
 
-5️⃣ Open the app in your browser
+### 5️⃣ Open the app in your browser
 
 Once the server starts, the terminal will display something like:
 ```
