@@ -30,3 +30,28 @@ You can modify the script to visualize any other comet or asteroid by changing t
 ```bash
 git clone https://github.com/yourusername/3i-atlas-orbit-visualizer.git
 cd 3i-atlas-orbit-visualizer
+```
+
+3️⃣ Install dependencies
+
+Run this inside your project folder (and inside the virtual environment if you made one):
+
+```
+pip install dash plotly astroquery astropy numpy pandas openpyxl
+```
+
+4️⃣ Run the app
+
+Start the local Dash server:
+```
+python app.py
+```
+
+5️⃣ Open the app in your browser
+
+Once the server starts, the terminal will display something like:
+```
+Dash is running on http://127.0.0.1:8050/
+```
+
+Open that link in your browser to explore the interactive 3I/ATLAS Orbit Visualizer.
